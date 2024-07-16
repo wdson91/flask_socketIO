@@ -43,7 +43,7 @@ def home():
             return render_template("home.html", error="A Sala não Existe.", code=code, name=name)
 
         session["room"] = room
-        session["name"] = name
+        session["name"] = name.capitalize()
         return redirect(url_for("room"))
 
     return render_template("home.html")

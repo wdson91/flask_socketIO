@@ -1,7 +1,28 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+/* Flexbox Containers */
 .content {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .buttons {
@@ -20,38 +41,54 @@
 
 .create-btn {
   width: 100%;
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.create-btn:hover {
+  background-color: #45a049;
+}
+
+/* Message Box */
 .message-box {
-  border-color: black;
-  border-width: 2px;
-  border-style: solid;
+  border: 2px solid #333;
   border-radius: 10px;
-  background-color: whitesmoke;
+  background-color: #fff;
   height: 80vh;
   display: flex;
   flex-direction: column;
   width: 80vw;
   align-items: stretch;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .messages {
-  overflow-y: scroll;
+  overflow-y: auto;
   flex: 1;
   width: 100%;
+  padding: 20px;
+  background-color: rgb(20 184 166);
+
 }
 
 .inputs {
   padding: 10px;
   display: flex;
-}
-
-h2 {
-  text-align: center;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
 }
 
 #message {
   flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .text {
@@ -59,11 +96,58 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  width: 95%;
+  border-radius: 2rem;
 }
 
 .muted {
   font-size: 10px;
   color: darkgray;
+
+}
+
+/* Scrollbar Styles */
+.messages::-webkit-scrollbar {
+  width: 8px;
+
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Transitions and Hover Effects */
+.create-btn,
+#message {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#create-btn:focus,
+#message:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-color: #333;
+}
+
+
+#send-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 5rem;
+  margin-left: 1rem;
+}
+#send-btn:hover {
+  background-color: #275d2a;
 }
